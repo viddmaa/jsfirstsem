@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Моя рисовалка</title>
+  <script src="lib/p5.min.js"></script>
+  <script src="lib/p5.dom.min.js"></script>
+  <script src="sketch.js"></script>
+  <style>
+    body {
+      background: #fafbfc;
+      font-family: Arial, sans-serif;
+    }
+    #toolbar {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .panel {
+      background: #ede6f3;
+      border-radius: 12px;
+      padding: 12px 18px 8px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .panel-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .panel-label {
+      font-family: 'Fredoka', 'Comic Sans MS', Arial, sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+    .tool-icon, .figure-btn {
+      width: 48px; height: 48px;
+      background: #ede6f3;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin: 2px;
+      transition: box-shadow 0.2s, background 0.2s;
+    }
+    .tool-icon.active, .figure-btn.active {
+      background: #e0d6e6;
+      box-shadow: 0 0 0 2px #7c47ff;
+    }
+    .swatch, .add-color {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 2.5px solid #222;
+      margin: 2px;
+      display: inline-block;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .swatch:active, .add-color:active {
+      box-shadow: 0 0 0 3px #7c47ff;
+    }
+    .add-color {
+      background: #ede6f3;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #canvas-container {
+      margin: auto;
+      width: fit-content;
+    }
+    canvas {
+      border: 2px solid #333;
+      border-radius: 8px;
+      background-color: white;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="toolbar"></div>
+  <div id="canvas-container"></div>
+</body>
+</html>
